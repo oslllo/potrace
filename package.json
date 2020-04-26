@@ -1,0 +1,35 @@
+{
+  "name": "oslllo-potrace",
+  "version": "0.0.1",
+  "description": "A JavaScript port of Potrace, for NodeJS",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oslllo/potrace.git"
+  },
+  "keywords": [
+    "potrace",
+    "oslllo"
+  ],
+  "author": "Ghustavh Ehm",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/oslllo/potrace/issues"
+  },
+  "homepage": "https://github.com/oslllo/potrace#readme",
+  "devDependencies": {
+    "jest": "^25.4.0"
+  },
+  "dependencies": {
+    "canvas": "^2.6.1",
+    "fast-glob": "^3.2.2",
+    "file-type": "^14.2.0",
+    "fs-extra": "^9.0.0",
+    "image-data-uri": "^2.0.1",
+    "jsdom": "^16.2.2",
+    "uuid": "^7.0.3"
+  }
+}
