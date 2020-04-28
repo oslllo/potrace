@@ -1,0 +1,21 @@
+os: linux
+dist: bionic
+
+language: node_js
+
+php:
+  - '12'
+
+before_script:
+  - npm install -g jest
+  - npm install --dev
+
+cache:
+  npm: true
+
+script:
+  - vendor/bin/phpunit
+
+branches:
+  except:
+  - dev

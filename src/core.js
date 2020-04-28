@@ -5,8 +5,35 @@ const FileType = require("file-type");
 const ImageDataUri = require("image-data-uri");
 
 var Base = {
+	loadImage: function (image) {
+		return new Promise(async (resolve, reject) => {
+			try {
+				switch (true) {
+					case image instanceof Buffer:
+						await this.loadImageFromBuffer(image);
+						resolve();
+						break;
+					case typeof image === "string":
+						await this.loadImageFromPath(image);
+						resolve();
+						break;
+					default:
+						reject(
+							`Image should be of type 'path (string)' or 'Buffer', ${typeof image} given.`
+						);
+				}
+			} catch (e) {
+				reject(e);
+			}
+		});
+	},
+
 	loadImageFromBuffer: function (buffer) {
 		return new Promise(async (resolve, reject) => {
+			if (buffer instanceof Buffer == false) {
+				reject(`Image should be of type 'Buffer', ${typeof buffer} given.`);
+				return;
+			}
 			this.emitter.on(this.BITMAP_LOADED_EVENT, () => {
 				this.emitter.removeAllListeners();
 				resolve();
@@ -22,12 +49,22 @@ var Base = {
 
 	loadImageFromPath: function (path) {
 		return new Promise(async (resolve, reject) => {
+			if (typeof path !== "string") {
+				reject(
+					`Image should be of type 'path (string)', ${typeof path} given.`
+				);
+				return;
+			}
 			if (this.info.isReady) {
 				this.clear();
 			}
-			let buffer = fs.readFileSync(path);
-			await this.loadImageFromBuffer(buffer);
-			resolve();
+			try {
+				let buffer = fs.readFileSync(path);
+				await this.loadImageFromBuffer(buffer);
+				resolve();
+			} catch (e) {
+				reject(e);
+			}
 		});
 	},
 
@@ -42,14 +79,17 @@ var Base = {
 
 	process: function () {
 		return new Promise((resolve, reject) => {
-			this.bmToPathlist();
-			this.processPath();
-			resolve();
+			try {
+				this.bmToPathlist();
+				this.processPath();
+				resolve();
+			} catch (e) {
+				reject(e);
+			}
 		});
 	},
 
-	getSVG: function (size, opt_type) {
-		// throw new Error('test')
+	getSVG: function (size = 1, opt_type) {
 		function path(curve) {
 			function bezier(i) {
 				var b =

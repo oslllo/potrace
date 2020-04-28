@@ -36,7 +36,6 @@ const Foundation = {
             }
             this.info.isReady = true;
             resolve();
-            // this.emitter.emit(this.BITMAP_LOADED_EVENT);
         })
     },
 

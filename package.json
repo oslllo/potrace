@@ -4,7 +4,8 @@
   "description": "A JavaScript port of Potrace, for NodeJS",
   "main": "src/index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "example": "node example/example.js"
   },
   "repository": {
     "type": "git",
@@ -21,7 +22,8 @@
   },
   "homepage": "https://github.com/oslllo/potrace#readme",
   "devDependencies": {
-    "jest": "^25.4.0"
+    "jest": "^25.4.0",
+    "sharp": "^0.25.2"
   },
   "dependencies": {
     "canvas": "^2.6.1",
