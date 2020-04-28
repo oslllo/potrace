@@ -1,5 +1,8 @@
 # Potrace
 
+![Travis (.org)](https://img.shields.io/travis/oslllo/potrace?label=Travis%20CI)
+![npm](https://img.shields.io/npm/v/oslllo-potrace)
+
 A "1:1 output" JavaScript port of [Potrace JS](https://github.com/kilobtye/potrace) for NodeJS.
 
 ---
@@ -82,6 +85,12 @@ Parameters for `potrace.setParameter()`.
 - `optcurve`: turn on/off curve optimization **(default: true)**.
 - `alphamax`: corner threshold parameter **(default: 1)**.
 - `opttolerance`: curve optimization tolerance **(default: 0.2)**.
+
+## Test
+
+```shell
+npm test
+```
 
 ## Credits
 
