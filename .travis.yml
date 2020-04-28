@@ -14,7 +14,7 @@ cache:
   npm: true
 
 script:
-  - vendor/bin/phpunit
+  - jest
 
 branches:
   except:
