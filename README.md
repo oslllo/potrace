@@ -2,6 +2,18 @@
 
 A "1:1 output" JavaScript port of [Potrace JS](https://github.com/kilobtye/potrace) for NodeJS.
 
+---
+
+| **Original image**        | **Potrace output**           |
+|---------------------------|------------------------------|
+| ![Original Image](example/tree.jpg) | ![Potrace Output](example/tree.png) |
+
+---
+
+[**Online Demo**](http://kilobtye.github.io/potrace/)
+
+---
+
 ## Installation
 
 ```shell
@@ -10,13 +22,9 @@ npm install oslllo-potrace
 
 ## Usage
 
-| **Original image**        | **Potrace output**           |
-|---------------------------|------------------------------|
-| ![](example/tree.jpg) | ![](example/tree.png) |
-
-[Online Demo](http://kilobtye.github.io/potrace/)
-
 Taken from [Example.js](https://github.com/oslllo/potrace/tree/master/example)
+
+Setup
 
 ```js
 const potrace = require("oslllo-potrace");
@@ -26,8 +34,11 @@ const sharp = require("sharp");
 
 const source_image_path = path.resolve("example/face.jpg");
 const traced_svg_path = path.resolve("example/face.svg");
+```
 
-// Using potrace.trace()
+Using `potrace.trace()`
+
+```js
 async function trace() {
     var traced_svg = await potrace.trace(source_image_path);
     fs.writeFileSync(traced_svg_path, traced_svg);
@@ -36,8 +47,11 @@ async function trace() {
         .png()
         .toFile(path.resolve("example/face.png"));
 }
+```
 
-// Using potrace.loadImage()
+Using `potrace.loadImage()`
+
+```js
 async function loadImage() {
     var _potrace = new potrace.Potrace;
     await _potrace.loadImage(source_image_path);
@@ -79,4 +93,4 @@ Parameters for `potrace.setParameter()`.
 
 ## License
 
-The MIT License (MIT). Please see [License File](https://github.com/oslllo/potrace/blob/master/LICENSE) for more information.
+The GNU General Public License v2.0 (GPL-2.0). Please see [License File](https://github.com/oslllo/potrace/blob/master/LICENSE) for more information.
