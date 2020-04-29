@@ -13,7 +13,11 @@ A "1:1 output" JavaScript port of [Potrace JS](https://github.com/kilobtye/potra
 
 ---
 
-[**Online Demo**](http://kilobtye.github.io/potrace/)
+[Online Demo](http://kilobtye.github.io/potrace/)
+
+---
+
+[❓ Why I created this package](https://github.com/tooolbox/node-potrace/issues/7)
 
 ---
 
@@ -27,7 +31,7 @@ npm install oslllo-potrace
 
 Taken from [Example.js](https://github.com/oslllo/potrace/tree/master/example)
 
-Setup
+Example Setup
 
 ```js
 const potrace = require("oslllo-potrace");
@@ -35,8 +39,8 @@ const fs = require("fs-extra");
 const path = require("path");
 const sharp = require("sharp");
 
-const source_image_path = path.resolve("example/face.jpg");
-const traced_svg_path = path.resolve("example/face.svg");
+const source_image_path = path.resolve("example/tree.jpg");
+const traced_svg_path = path.resolve("example/tree.svg");
 ```
 
 Using `potrace.trace()`
@@ -48,7 +52,7 @@ async function trace() {
     await sharp(traced_svg_path)
         .flatten({ background: "#fff" })
         .png()
-        .toFile(path.resolve("example/face.png"));
+        .toFile(path.resolve("example/tree.png"));
 }
 ```
 
@@ -64,7 +68,7 @@ async function loadImage() {
     await sharp(traced_svg_path)
         .flatten({ background: "#fff" })
         .png()
-        .toFile(path.resolve("example/face.png"));
+        .toFile(path.resolve("example/tree.png"));
 }
 ```
 
