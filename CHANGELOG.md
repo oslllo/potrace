@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.0.5
+
+- Update `package.json` description to match repo.
+
 ## 0.0.4
 
 - Fixed issue with `potrace.trace()` not being able to set parameters.
