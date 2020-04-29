@@ -9,19 +9,31 @@
 
 var Potrace = require("./base");
 
+var cb = {};
+
 async function trace(image, options) {
 	return new Promise(async (resolve, reject) => {
 		var potrace = new Potrace();
-		if (arguments === 2) {
+		if (arguments.length === 2) {
 			potrace.setParameter(options);
 		}
-		await potrace.loadImage(image);
-		await potrace.process();
-		resolve(potrace.getSVG());
+		try {
+			await potrace.loadImage(image);
+			await potrace.process();
+			resolve(potrace.getSVG());
+		} catch (e) {
+			reject(e);
+		}
+		Object.assign(cb, {
+			trace: {
+				potrace: potrace
+			}
+		})
 	});
 }
 
 module.exports = {
+	cb,
     trace,
 	Potrace,
 };

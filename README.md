@@ -72,9 +72,12 @@ async function loadImage() {
 }
 ```
 
-## API
+## API `(potrace = require("oslllo-potrace"))`
 
 - `potrace.trace(file, options)`: load image from `path` or `Buffer` API, process it then return its traced SVG data.
+
+## Potrace Class API `(potrace = new potrace.Potrace())`
+
 - `potrace.loadImage(file, options)`: load image from `path` or `Buffer` API.
 - `potrace.setParameter({para1: value, ...})`: set parameters.
 - `potrace.process()`: wait for the image be loaded, then run potrace algorithm. on image.
@@ -82,13 +85,15 @@ async function loadImage() {
 
 ## Parameters
 
-Parameters for `potrace.setParameter()`.
-
 - `turnpolicy`: how to resolve ambiguities in path decomposition. `TURNPOLICY_BLACK`, `TURNPOLICY_WHITE`, `TURNPOLICY_LEFT`, `TURNPOLICY_RIGHT`, `TURNPOLICY_MINORITY`, `TURNPOLICY_MAJORITY` **(default: TURNPOLICY_MINORITY)**.
 - `turdsize`: suppress speckles of up to this size **(default: 2)**.
 - `optcurve`: turn on/off curve optimization **(default: true)**.
 - `alphamax`: corner threshold parameter **(default: 1)**.
 - `opttolerance`: curve optimization tolerance **(default: 0.2)**.
+
+## Changelog
+
+Please see [CHANGELOG](https://github.com/oslllo/potrace/blob/master/CHANGELOG.md) for more information what has changed recently.
 
 ## Test
 

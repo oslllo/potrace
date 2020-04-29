@@ -1,12 +1,19 @@
 # CHANGELOG
 
+## 0.0.4
+
+- Fixed issue with `potrace.trace()` not being able to set parameters.
+- Refactored tests.
+- Added new tests.
+- Updated README.md.
+
 ## 0.0.3
 
-- Update README.md.
+- Updated README.md.
 
 ## 0.0.2
 
-- Update README.md.
+- Updated README.md.
 
 ## 0.0.1
 
