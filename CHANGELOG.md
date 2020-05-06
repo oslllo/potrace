@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 0.0.6
+
+- `potrace.Potrace.getSVG()` default size can now be set in parameters.
+- Cleaned up tests and code.
+- Updated README.md.
+- Added example tests.
+
 ## 0.0.5
 
 - Update `package.json` description to match repo.

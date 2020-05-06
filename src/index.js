@@ -26,14 +26,14 @@ async function trace(image, options) {
 		}
 		Object.assign(cb, {
 			trace: {
-				potrace: potrace
-			}
-		})
+				potrace: potrace,
+			},
+		});
 	});
 }
 
 module.exports = {
 	cb,
-    trace,
+	trace,
 	Potrace,
 };

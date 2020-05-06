@@ -89,7 +89,10 @@ var Base = {
 		});
 	},
 
-	getSVG: function (size = 1, opt_type) {
+	getSVG: function (size, opt_type) {
+		if (typeof size === "undefined") {
+			size = this.info.svgSize;
+		}
 		function path(curve) {
 			function bezier(i) {
 				var b =

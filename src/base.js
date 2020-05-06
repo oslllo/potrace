@@ -21,6 +21,7 @@ function Potrace() {
 		optcurve: true,
 		alphamax: 1,
 		opttolerance: 0.2,
+		svgSize: 1
 	};
 
 	this.imgElement.onload = async () => {
