@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 0.0.7
+
+- Fix typo in `core.js`.
+- Added badge links to `README.md`.
+- Updated `README.md` content.
+- Added new tags to `package.json`.
+
 ## 0.0.6
 
 - `potrace.Potrace.getSVG()` default size can now be set in parameters.
