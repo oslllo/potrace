@@ -4,7 +4,7 @@ const fs = require("fs-extra");
 const FileType = require("file-type");
 const ImageDataUri = require("image-data-uri");
 
-var Base = {
+var Core = {
 	loadImage: function (image) {
 		return new Promise(async (resolve, reject) => {
 			try {
@@ -183,4 +183,4 @@ var Base = {
 	},
 };
 
-module.exports = Base;
+module.exports = Core;
