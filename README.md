@@ -1,7 +1,7 @@
 # Potrace
 
-![Travis (.org)](https://img.shields.io/travis/oslllo/potrace?label=Travis%20CI)
-![npm](https://img.shields.io/npm/v/oslllo-potrace)
+[![Travis (.org)](https://img.shields.io/travis/oslllo/potrace?label=Travis%20CI)](https://travis-ci.org/github/oslllo/potrace)
+[![npm](https://img.shields.io/npm/v/oslllo-potrace)](https://www.npmjs.com/package/oslllo-potrace)
 
 A "1:1 output" JavaScript port of [Potrace JS](https://github.com/kilobtye/potrace) for NodeJS.
 
@@ -17,7 +17,9 @@ A "1:1 output" JavaScript port of [Potrace JS](https://github.com/kilobtye/potra
 
 ---
 
-[❓ Why I created this package](https://github.com/tooolbox/node-potrace/issues/7)
+## Why did I create this package ❓
+
+[The issue](https://github.com/tooolbox/node-potrace/issues/7)
 
 ---
 
