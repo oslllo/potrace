@@ -14,7 +14,13 @@
   },
   "keywords": [
     "potrace",
-    "oslllo"
+    "oslllo",
+    "potrace-js",
+    "potrace-port",
+    "curve",
+    "curve-optimization",
+    "javascript-port",
+    "nodejs"
   ],
   "author": "Ghustavh Ehm <https://github.com/Ghustavh97>",
   "contributors": [
