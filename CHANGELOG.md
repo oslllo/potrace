@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.0.8
+
+- Reduced npm package size.
+
 ## 0.0.7
 
 - Fix typo in `core.js`.
