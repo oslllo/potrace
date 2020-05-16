@@ -18,8 +18,8 @@ branches:
   - dev'
 
 jobs:
-include:
-  - os: linux
-    dist: bionic
-  - os: osx
-    osx_image: xcode11.4
+  include:
+    - os: linux
+      dist: bionic
+    - os: osx
+      osx_image: xcode11.4
