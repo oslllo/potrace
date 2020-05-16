@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.0.9
+
+- remove unused dependences.
+- fix advisory https://www.npmjs.com/advisories/1500.
+
 ## 0.0.8
 
 - Reduced npm package size.
