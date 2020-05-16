@@ -1,6 +1,3 @@
-os: linux
-dist: bionic
-
 language: node_js
 
 node:
@@ -18,4 +15,11 @@ script:
 
 branches:
   except:
-  - dev
+  - dev'
+
+jobs:
+include:
+  - os: linux
+    dist: bionic
+  - os: osx
+    osx_image: xcode11.4
