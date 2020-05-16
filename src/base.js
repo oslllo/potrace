@@ -1,13 +1,11 @@
 "use strict";
 
-const uuid = require("uuid").v4;
 const Core = require("./core");
 const Foundation = require("./foundation");
 const Emitter = require("./types/Emitter");
 const { Document } = require("./types/Dom");
 
 function Potrace() {
-	this.uuid = uuid();
 	this.emitter = new Emitter();
 	this.imgElement = Document.createElement("img");
 	this.imgCanvas = Document.createElement("canvas");

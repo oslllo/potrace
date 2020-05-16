@@ -44,8 +44,6 @@
     "fast-glob": "^3.2.2",
     "file-type": "^14.2.0",
     "fs-extra": "^9.0.0",
-    "image-data-uri": "^2.0.1",
-    "jsdom": "^16.2.2",
-    "uuid": "^7.0.3"
+    "jsdom": "^16.2.2"
   }
 }

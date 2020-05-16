@@ -2,7 +2,6 @@
 
 const fs = require("fs-extra");
 const FileType = require("file-type");
-const ImageDataUri = require("image-data-uri");
 
 var Core = {
 	loadImage: function (image) {
@@ -41,8 +40,11 @@ var Core = {
 			if (this.info.isReady) {
 				this.clear();
 			}
-			let buffer_type = await FileType.fromBuffer(buffer);
-			let uri = ImageDataUri.encode(buffer, buffer_type.ext);
+			let bufferType = await FileType.fromBuffer(buffer);
+			let uri = this.encode({
+				data: buffer,
+				type: bufferType.ext,
+			});
 			this.imgElement.src = uri;
 		});
 	},
