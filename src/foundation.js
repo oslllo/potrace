@@ -11,6 +11,35 @@ const Emitter = require("./types/Emitter");
 
 const Foundation = {
 
+    encode: function (image) {
+
+        switch (true) {
+            case !image:
+                throw new TypeError(`Parameter 'image' was not defined.`);
+                break;
+            case !image.data:
+                throw new TypeError (`'image.data' was not defined.`);
+                break;
+            case !image.type:
+                throw new TypeError (`'image.type' was not defined.`);
+                break;
+        }
+
+        image.type = /\//.test(image.type) ? image.type : "image/" + image.type;
+        
+        var base64;
+        
+        if (Buffer.isBuffer(image.data)) {
+            base64 = image.data.toString("base64");
+        } else {
+            base64 = new Buffer(image.data).toString("base64");
+        }
+
+		var database64 = "data:" + image.type + ";base64," + base64;
+
+		return database64;
+    },
+
     loadCanvas: function () {
         this.imgCanvas.width = this.imgElement.width;
         this.imgCanvas.height = this.imgElement.height;
