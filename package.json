@@ -36,14 +36,14 @@
   },
   "homepage": "https://github.com/oslllo/potrace#readme",
   "devDependencies": {
-    "jest": "^25.4.0",
-    "sharp": "^0.25.2"
+    "jest": "^25.5.4",
+    "sharp": "^0.25.4"
   },
   "dependencies": {
     "canvas": "^2.6.1",
-    "fast-glob": "^3.2.3",
+    "fast-glob": "^3.2.4",
     "file-type": "^14.6.2",
     "fs-extra": "^9.0.1",
-    "jsdom": "^16.2.2"
+    "jsdom": "^16.3.0"
   }
 }
