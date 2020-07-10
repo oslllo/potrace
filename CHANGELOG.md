@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.0.10
+
+- update dependences.
+
 ## 0.0.9
 
 - remove unused dependences.
