@@ -1,16 +1,17 @@
 "use strict";
 
 const fs = require("fs-extra");
-const { path2, Potrace, assert, expect } = require("./helper");
+const { path2, Potrace, assert, expect, constants } = require("./helper");
 
 describe("test.function", () => {
     var sample = {
         parameters: {
-            turnpolicy: Potrace.Potrace.TURNPOLICY_RIGHT,
+            turnpolicy: constants.TURNPOLICY_RIGHT,
             turdsize: 5,
             optcurve: false,
             alphamax: 3,
             opttolerance: 1,
+            opt_type: undefined,
             svgSize: 2.5,
         },
     };
@@ -20,17 +21,17 @@ describe("test.function", () => {
     };
     describe("Potrace.trace()", () => {
         it("resolves with valid image buffer", () => {
-            return Potrace.trace(image.buffer);
+            return Potrace(image.buffer).trace();
         });
         it("resolves with valid image path", () => {
-            return Potrace.trace(image.path);
+            return Potrace(image.path).trace();
         });
         it("rejects with invalid argument data", async () => {
-            await expect(Potrace.trace(123)).to.be.rejectedWith();
+            await expect(Potrace(123).trace()).to.be.rejectedWith();
         });
         it("can set parameters", async () => {
-            await Potrace.trace(image.buffer, sample.parameters);
-            var info = Potrace.cb.trace.potrace.info;
+            var potrace = Potrace(image.buffer, sample.parameters);
+            var info = potrace.options.all();
             delete info["isReady"];
             assert.deepEqual(info, sample.parameters);
         });

@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 function Sum(x, y, xy, x2, y2) {
     this.x = x;

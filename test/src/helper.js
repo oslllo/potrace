@@ -3,6 +3,7 @@
 const path = require("path");
 const fg = require("fast-glob");
 const Potrace = require("../../");
+const constants = require("../../src/constants");
 const { assert, expect } = require("chai").use(require("chai-as-promised"));
 
 const path2 = {
@@ -19,4 +20,5 @@ module.exports = {
     expect: expect,
     assert: assert,
     Potrace: Potrace,
+    constants: constants
 };
