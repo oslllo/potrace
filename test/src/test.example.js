@@ -1,18 +1,18 @@
 "use strict";
 
 const { path2, expect } = require("./helper");
-const { traceExample, potracePotraceExample } = require("../../example/example");
+const { example1, example2 } = require("../../example/example");
 
 describe("test.example", () => {
-    describe("traceExample()", () => {
+    describe("example1()", () => {
         it("resolves", function () {
             this.timeout(10000);
-            return traceExample();
+            return example1();
         });
     });
-    describe("potracePotraceExample()", () => {
+    describe("example2()", () => {
         it("resolves", () => {
-            return potracePotraceExample();
+            return example2();
         });
     });
 });
