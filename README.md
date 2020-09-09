@@ -29,83 +29,76 @@ A "1:1 output" JavaScript port of [Potrace JS](https://github.com/kilobtye/potra
 npm install oslllo-potrace
 ```
 
-## Usage
+## Basic Usage
+
+---
 
 Taken from [Example.js](https://github.com/oslllo/potrace/tree/master/example)
 
-#### Example Setup
+---
+
+### Example 1
 
 ```js
-// Require packages
-const potrace = require("oslllo-potrace");
-const fs = require("fs-extra");
 const path = require("path");
-const sharp = require("sharp");
+const Potrace = require("..");
+const fs = require("fs-extra");
+const Svg2 = require("oslllo-svg2");
 
-// Setup paths
-const SOURCE_IMAGE_PATH = path.resolve("example/tree.jpg");
-const TRACED_SVG_PATH = path.resolve("example/tree.svg");
-
-// Function to help us save our svg to pngs on disk
-async function saveAsPngToDisk(TRACED_SVG_PATH) {
-    await sharp(TRACED_SVG_PATH)
-        .flatten({ background: "#fff" })
-        .png()
-        .toFile(path.resolve("example/tree.png"));
+async function example1() {
+    var source = path.resolve("example/tree.jpg");
+    var destination = path.resolve("example/tree.svg");
+    var traced = await Potrace(source).trace();
+    fs.writeFileSync(destination, traced);
+    await Svg2(traced).png().extend(10).toFile("example/tree.png");
 }
+
+example1().then(() => {
+    console.log("done");
+}).catch((err) => {
+    throw err;
+});
 ```
 
-#### Using `potrace.trace()`
+---
+
+### Example 2
 
 ```js
-async function traceExample() {
-    // Trace svg using potrace.trace()
-    var tracedSvg = await potrace.trace(SOURCE_IMAGE_PATH);
-    // Save svg to disk with .svg extension
-    fs.writeFileSync(TRACED_SVG_PATH, tracedSvg);
-    // Add white background to svg and save to disk with .png extension
-    await saveAsPngToDisk(TRACED_SVG_PATH);
+const path = require("path");
+const Potrace = require("..");
+const fs = require("fs-extra");
+const Svg2 = require("oslllo-svg2");
+
+async function example2() {
+    var source = path.resolve("example/tree.jpg");
+    var destination = path.resolve("example/tree.svg");
+    var instance = Potrace(source);
+    var traced = await instance.trace();
+    fs.writeFileSync(destination, traced);
+    await Svg2(traced).png().extend(10).toFile("example/tree.png");
 }
+
+example2().then(() => {
+    console.log("done");
+}).catch((err) => {
+    throw err;
+});
 ```
 
-#### Using `new potrace.Potrace()`
-
-```js
-async function potracePotraceExample() {
-    // Create new potrace.Potrace() instance
-    var trace = new potrace.Potrace();
-    // Load image we want to trace into the instance
-    await trace.loadImage(SOURCE_IMAGE_PATH);
-    // Process the image
-    await trace.process();
-    // Retrieve our traced svg
-    tracedSvg = trace.getSVG();
-    // Save svg to disk with .svg extension
-    fs.writeFileSync(TRACED_SVG_PATH, tracedSvg);
-    // Add white background to svg and save to disk with .png extension
-    await saveAsPngToDisk(TRACED_SVG_PATH);
-}
-```
-
-### Wrapper API `(potrace = require("oslllo-potrace"))`
-
-- `potrace.trace(file, options)`: load image from `path` or `Buffer` API, process it then return its traced SVG data.
-
-### Potrace Class API `(potrace = new potrace.Potrace())`
-
-- `potrace.loadImage(file, options)`: load image from `path` or `Buffer` API.
-- `potrace.setParameter({para1: value, ...})`: set parameters.
-- `potrace.process()`: wait for the image be loaded, then run potrace algorithm. on image.
-- `potrace.getSVG(size, opt_type)`: return a string of generated SVG image. ***NOTE:*** `The resulting image size` <b>=</b> `the original image size` <b>*</b> `size`. Optional parameter `opt_type` can be "curve".
+---
 
 ### Parameters
 
-- `turnpolicy`: how to resolve ambiguities in path decomposition. `TURNPOLICY_BLACK`, `TURNPOLICY_WHITE`, `TURNPOLICY_LEFT`, `TURNPOLICY_RIGHT`, `TURNPOLICY_MINORITY`, `TURNPOLICY_MAJORITY` **(default: TURNPOLICY_MINORITY)**.
-- `turdsize`: suppress speckles of up to this size **(default: 2)**.
-- `optcurve`: turn on/off curve optimization **(default: true)**.
-- `alphamax`: corner threshold parameter **(default: 1)**.
-- `opttolerance`: curve optimization tolerance **(default: 0.2)**.
-- `svgSize`: set default svg size for `potrace.Potrace.getSVG()` **(default: 1)**.
+- `source` ([**String**](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | [**Buffer**](https://nodejs.org/api/buffer.html)): path to `image` to trace.
+- `options` ([**Object**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)): option parameter object.
+    - `turnpolicy` ([**string**](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)): how to resolve ambiguities in path decomposition. available options are [ `Potrace.TURNPOLICY_BLACK`, `Potrace.TURNPOLICY_WHITE`, `Potrace.TURNPOLICY_LEFT`, `Potrace.TURNPOLICY_RIGHT`, `Potrace.TURNPOLICY_MINORITY`, `Potrace.TURNPOLICY_MAJORITY` ] **(default: Potrace.TURNPOLICY_MINORITY)**.
+    - `turdsize`: ([**Number**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)) suppress speckles of up to this size **(default: 2)**.
+    - `optcurve`: ([**Boolean**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)) turn on/off curve optimization **(default: true)**.
+    - `alphamax`: ([**Number**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)) corner threshold parameter **(default: 1)**.
+    - `opttolerance`: ([**Number**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)) curve optimization tolerance **(default: 0.2)**.
+    - `svgSize`: ([**Number**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)) set svg output size. ***NOTE:*** `The resulting image size` <b>=</b> `the original image size` <b>*</b> `size` **(default: 1)**.
+    - `opt_type`: ([**String**](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)) output svg type, available options are [`curve`]
 
 ## Changelog
 
@@ -119,9 +112,9 @@ npm test
 
 ## Credits
 
-[Original Potrace](http://potrace.sourceforge.net/) by Peter Selinger.
-
 [Potrace JS Port](https://github.com/kilobtye/potrace) by @kilobtye.
+
+[Original Potrace](http://potrace.sourceforge.net/) by Peter Selinger.
 
 [Another Potrace Port For Node.js](https://github.com/tooolbox/node-potrace) maintained by @tooolbox.
 
