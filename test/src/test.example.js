@@ -5,7 +5,8 @@ const { traceExample, potracePotraceExample } = require("../../example/example")
 
 describe("test.example", () => {
     describe("traceExample()", () => {
-        it("resolves", () => {
+        it("resolves", function () {
+            this.timeout(10000);
             return traceExample();
         });
     });

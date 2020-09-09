@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 
-const Point = require('./Point');
+const Point = require("./Point");
 
 function Opti() {
     this.pen = 0;

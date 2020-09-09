@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 function Curve(n) {
     this.n = n;

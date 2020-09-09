@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 function Path() {
     this.area = 0;
