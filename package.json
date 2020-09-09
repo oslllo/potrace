@@ -37,7 +37,7 @@
   "homepage": "https://github.com/oslllo/potrace#readme",
   "dependencies": {
     "canvas": "^2.6.1",
-    "jsdom": "^16.3.0"
+    "jsdom": "^16.4.0"
   },
   "devDependencies": {
     "fast-glob": "^3.2.4",
