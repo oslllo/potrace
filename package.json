@@ -38,7 +38,8 @@
   "dependencies": {
     "canvas": "^2.6.1",
     "jimp": "^0.16.1",
-    "jsdom": "^16.4.0"
+    "jsdom": "^16.4.0",
+    "oslllo-validator": "^1.1.0"
   },
   "devDependencies": {
     "fast-glob": "^3.2.4",
