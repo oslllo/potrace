@@ -1,6 +1,6 @@
 # Potrace
 
-[![Travis (.org)](https://img.shields.io/travis/oslllo/potrace)](https://travis-ci.com/github/oslllo/potrace)
+[![CI/Test](https://github.com/oslllo/potrace/workflows/CI/Test/badge.svg)](https://github.com/oslllo/potrace/actions)
 [![npm](https://img.shields.io/npm/v/oslllo-potrace)](https://www.npmjs.com/package/oslllo-potrace)
 
 A "1:1 output" JavaScript port of [Potrace JS](https://github.com/kilobtye/potrace) for NodeJS.
