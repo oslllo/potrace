@@ -23,6 +23,10 @@ A "1:1 output" JavaScript port of [Potrace JS](https://github.com/kilobtye/potra
 
 ---
 
+# Prerequisites
+
+- Node.js v10+
+
 ## Installation
 
 ```shell
