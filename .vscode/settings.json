@@ -1,9 +1,0 @@
-{
-    "editor.tabSize": 4,
-    "editor.insertSpaces": true,
-    "editor.detectIndentation": false,
-    "editor.codeActionsOnSave": {},
-    "editor.formatOnSave": true,
-    "editor.semanticTokenColorCustomizations": {},
-    "editor.suggestSelection": "first",
-}
