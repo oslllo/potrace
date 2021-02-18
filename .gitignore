@@ -1,2 +1,11 @@
 node_modules
-report.*.json
+.DS_Store
+.cache
+.env
+.env.*
+/dist
+**/dist/**
+
+*.log
+*.zip
+*.tgz
