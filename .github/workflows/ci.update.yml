@@ -13,12 +13,13 @@ jobs:
       - name: set remote url
         run: git remote set-url --push origin https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
       - name: package-update
-        uses: ghustavh97/actions-package-update@test
+        uses: taichi/actions-package-update@master
         env:
-          AUTHOR_EMAIL: oslllo.com@gmail.com
-          AUTHOR_NAME: oslllo
+          AUTHOR_EMAIL: ghustavh97@gmail.com
+          AUTHOR_NAME: Ghustavh
           EXECUTE: "true"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           LOG_LEVEL: debug
+          SET_NODE_VERSION: 14
         with:
           args: -u --packageFile package.json --loglevel verbose
