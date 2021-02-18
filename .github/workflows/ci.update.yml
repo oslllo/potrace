@@ -13,7 +13,7 @@ jobs:
       - name: set remote url
         run: git remote set-url --push origin https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
       - name: package-update
-        uses: taichi/actions-package-update@master
+        uses: ghustavh97/actions-package-update@test2
         env:
           AUTHOR_EMAIL: ghustavh97@gmail.com
           AUTHOR_NAME: Ghustavh
