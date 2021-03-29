@@ -41,7 +41,7 @@
   "dependencies": {
     "canvas": "^2.7.0",
     "jimp": "^0.16.1",
-    "jsdom": "^16.4.0",
+    "jsdom": "^16.5.0",
     "oslllo-validator": "^1.1.0"
   },
   "devDependencies": {
