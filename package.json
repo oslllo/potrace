@@ -41,15 +41,15 @@
   "dependencies": {
     "canvas": "^2.7.0",
     "jimp": "^0.16.1",
-    "jsdom": "^16.4.0",
+    "jsdom": "^16.5.2",
     "oslllo-validator": "^1.1.0"
   },
   "devDependencies": {
-    "fast-glob": "^3.2.5",
-    "chai": "^4.3.1",
+    "chai": "^4.3.4",
     "chai-as-promised": "^7.1.1",
+    "fast-glob": "^3.2.5",
     "fs-extra": "^9.1.0",
-    "mocha": "^8.3.0",
+    "mocha": "^8.3.2",
     "oslllo-svg2": "^0.2.2"
   }
 }
