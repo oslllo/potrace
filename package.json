@@ -1,6 +1,6 @@
 {
   "name": "oslllo-potrace",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A \"1:1 output\" JavaScript port of Potrace JS for NodeJS.",
   "main": "src/index.js",
   "files": [
@@ -26,13 +26,11 @@
     "nodejs"
   ],
   "author": "Ghustavh Ehm <https://github.com/Ghustavh97>",
-  "contributors": [
-    {
-      "name": "Ghustavh Ehm",
-      "email": "Ghustavh97@gmail.com",
-      "url": "https://github.com/Ghustavh97"
-    }
-  ],
+  "contributors": [{
+    "name": "Ghustavh Ehm",
+    "email": "Ghustavh97@gmail.com",
+    "url": "https://github.com/Ghustavh97"
+  }],
   "license": "GPL-2.0",
   "bugs": {
     "url": "https://github.com/oslllo/potrace/issues"
