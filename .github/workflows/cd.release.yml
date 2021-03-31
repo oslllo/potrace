@@ -2,27 +2,33 @@
 name: CD/Release
 
 on:
-  workflow_dispatch:
-
+  push:
+    branches:
+      - master
 jobs:
-  release:
+  release-please:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Cache node_modules
-      id: cache-modules
-      uses: actions/cache@v1
-      with:
-        path: node_modules
-        key: 12.x-${{ runner.OS }}-build-${{ hashFiles('package.json') }}
-    - name: Build
-      if: steps.cache-modules.outputs.cache-hit != 'true'
-      run: npm install
-    - name: Test
-      run: npm test
-
-    - name: Publish
-      uses: mikeal/merge-release@master
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      - uses: GoogleCloudPlatform/release-please-action@v2
+        id: release
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          release-type: node
+          package-name: oslllo-potrace
+      # The logic below handles the npm publication:
+      - uses: actions/checkout@v2
+        # these if statements ensure that a publication only occurs when
+        # a new release is created:
+        if: ${{ steps.release.outputs.release_created }}
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: 'https://registry.npmjs.org'
+        if: ${{ steps.release.outputs.release_created }}
+      # if you are using Yarn, substitute the command below with `yarn install --frozen-lockfile`
+      - run: npm ci
+        if: ${{ steps.release.outputs.release_created }}
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
+        if: ${{ steps.release.outputs.release_created }}
