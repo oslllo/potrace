@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.2] - 2021/3/31
+
+### Security
+
+- Updated dependences.
+
 ## [1.1.1] - 2020/12/12
 
 ### Fixed
@@ -27,9 +33,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Changed `potrace.trace(file, options)` ***=>*** `Potrace(file, options).trace()`.
-- Changed `new potrace.Potrace()` ***=>*** `Potrace(file, options)`,
-    > The `new` declaration for `Potrace` is no more required.
+- Changed `potrace.trace(file, options)` **_=>_** `Potrace(file, options).trace()`.
+- Changed `new potrace.Potrace()` **_=>_** `Potrace(file, options)`,
+  > The `new` declaration for `Potrace` is no more required.
 - Refactored codebase.
 - Updated tests.
 - Moved tests from `jest` to `mocha`.
