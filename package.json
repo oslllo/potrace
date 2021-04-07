@@ -26,11 +26,13 @@
     "nodejs"
   ],
   "author": "Ghustavh Ehm <https://github.com/Ghustavh97>",
-  "contributors": [{
-    "name": "Ghustavh Ehm",
-    "email": "Ghustavh97@gmail.com",
-    "url": "https://github.com/Ghustavh97"
-  }],
+  "contributors": [
+    {
+      "name": "Ghustavh Ehm",
+      "email": "Ghustavh97@gmail.com",
+      "url": "https://github.com/Ghustavh97"
+    }
+  ],
   "license": "GPL-2.0",
   "bugs": {
     "url": "https://github.com/oslllo/potrace/issues"
@@ -40,7 +42,7 @@
     "canvas": "^2.7.0",
     "jimp": "^0.16.1",
     "jsdom": "^16.5.2",
-    "oslllo-validator": "^1.1.0"
+    "oslllo-validator": "^1.1.1"
   },
   "devDependencies": {
     "chai": "^4.3.4",
@@ -48,6 +50,6 @@
     "fast-glob": "^3.2.5",
     "fs-extra": "^9.1.0",
     "mocha": "^8.3.2",
-    "oslllo-svg2": "^0.2.2"
+    "oslllo-svg2": "^0.2.3"
   }
 }
