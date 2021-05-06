@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+### [1.1.3](https://www.github.com/oslllo/potrace/compare/v1.1.2...v1.1.3) (2021-05-06)
+
+
+### Miscellaneous Chores
+
+* release 1.1.3 ([f7784aa](https://www.github.com/oslllo/potrace/commit/f7784aae62f0132377d5f91ee6be38b63d82ddef))
+
 ## [1.1.2] - 2021/3/31
 
 ### Security
