@@ -49,7 +49,7 @@
     "chai-as-promised": "^7.1.1",
     "fast-glob": "^3.2.5",
     "fs-extra": "^10.0.0",
-    "mocha": "^8.3.2",
-    "oslllo-svg2": "^0.2.3"
+    "mocha": "^8.4.0",
+    "oslllo-svg2": "^0.2.4"
   }
 }
