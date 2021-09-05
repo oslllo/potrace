@@ -39,17 +39,17 @@
   },
   "homepage": "https://github.com/oslllo/potrace#readme",
   "dependencies": {
-    "canvas": "^2.7.0",
+    "canvas": "^2.8.0",
     "jimp": "^0.16.1",
-    "jsdom": "^16.5.3",
-    "oslllo-validator": "^2.0.0"
+    "jsdom": "^16.7.0",
+    "oslllo-validator": "^2.0.1"
   },
   "devDependencies": {
     "chai": "^4.3.4",
     "chai-as-promised": "^7.1.1",
-    "fast-glob": "^3.2.5",
+    "fast-glob": "^3.2.7",
     "fs-extra": "^10.0.0",
-    "mocha": "^8.3.2",
-    "oslllo-svg2": "^0.2.3"
+    "mocha": "^8.4.0",
+    "oslllo-svg2": "^0.3.0"
   }
 }
