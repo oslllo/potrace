@@ -41,7 +41,7 @@
   "dependencies": {
     "canvas": "^2.8.0",
     "jimp": "^0.16.1",
-    "jsdom": "^16.7.0",
+    "jsdom": "^17.0.0",
     "oslllo-validator": "^2.0.1"
   },
   "devDependencies": {
@@ -49,7 +49,7 @@
     "chai-as-promised": "^7.1.1",
     "fast-glob": "^3.2.7",
     "fs-extra": "^10.0.0",
-    "mocha": "^8.4.0",
-    "oslllo-svg2": "^0.3.0"
+    "mocha": "^9.1.1",
+    "oslllo-svg2": "^0.3.1"
   }
 }
