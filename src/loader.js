@@ -9,30 +9,33 @@ const Loader = function (dom) {
     this.document = dom.window.document;
 };
 
+const base64ToImage = (document, base64) => new Promise((resolve) => {
+    var element = document.createElement("img");
+    element.onload = () => {
+        var data = {
+            file: image,
+            base64: base64,
+            element: element,
+        };
+        resolve(data);
+    };
+    element.src = base64;
+});
+
 Loader.prototype = {
-    image: function (image) {
-        return new Promise(async (resolve, reject) => {
-            if (!is.buffer(image) && !is.string(image)) {
-                var err = error.invalidParameterError(
-                    "image",
-                    "buffer or path to image",
-                    image
-                );
-                return reject(err);
-            }
-            var element = this.document.createElement("img");
-            image = await jimp.read(image);
-            var base64 = await image.getBase64Async(jimp.AUTO);
-            element.onload = () => {
-                var data = {
-                    file: image,
-                    base64: base64,
-                    element: element,
-                };
-                resolve(data);
-            };
-            element.src = base64;
-        });
+    image: async function (image) {
+        if (!is.buffer(image) && !is.string(image)) {
+            var err = error.invalidParameterError(
+                "image",
+                "buffer or path to image",
+                image
+            );
+            throw err;
+        }
+        image = await jimp.read(image);
+        var base64 = await image.getBase64Async(jimp.AUTO);
+        var element = await base64ToImage(this.document, base64);
+        return element;
     },
     canvas: function (image) {
         var { element } = image;
