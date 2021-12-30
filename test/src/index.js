@@ -7,6 +7,14 @@ function prepare() {
     ["generated"].forEach((directory) => {
         fs.emptyDirSync(path2[directory]);
     });
+
+    /*
+     * Throw when hit unhandledRejection, see:
+     * https://github.com/mochajs/mocha/issues/2640#issuecomment-789615757
+     */
+    process.on('unhandledRejection', (reason) => {
+        throw reason;
+    });
 }
 
 module.exports = {
