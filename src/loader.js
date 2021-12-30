@@ -12,12 +12,7 @@ const Loader = function (dom) {
 const base64ToImage = (document, base64) => new Promise((resolve) => {
     var element = document.createElement("img");
     element.onload = () => {
-        var data = {
-            file: image,
-            base64: base64,
-            element: element,
-        };
-        resolve(data);
+        resolve(element);
     };
     element.src = base64;
 });
@@ -35,7 +30,11 @@ Loader.prototype = {
         image = await jimp.read(image);
         var base64 = await image.getBase64Async(jimp.AUTO);
         var element = await base64ToImage(this.document, base64);
-        return element;
+        return {
+            file: image,
+            base64: base64,
+            element: element,
+        };;
     },
     canvas: function (image) {
         var { element } = image;
