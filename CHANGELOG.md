@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0](https://www.github.com/oslllo/potrace/compare/v1.1.4...v1.2.0) (2021-12-30)
+
+
+### Features
+
+* **potrace:** new Promise() is not needed with async function ([1adad10](https://www.github.com/oslllo/potrace/commit/1adad10ec6c0b6d19598d47faa36e64a574a756c))
+
+
+### Bug Fixes
+
+* **src:** remove unused vars ([a00c02a](https://www.github.com/oslllo/potrace/commit/a00c02a982472ea78dd74fd20c6402e093775002))
+* unhandled rejection in Loader.image() ([5edf4a7](https://www.github.com/oslllo/potrace/commit/5edf4a79ed971160578003dd9c236c0ac9accf98))
+* unhandled rejection in Loader.image() ([0c3843f](https://www.github.com/oslllo/potrace/commit/0c3843f078a64570043f5a046844197c86a943af))
+
 ### [1.1.4](https://www.github.com/oslllo/potrace/compare/v1.1.3...v1.1.4) (2021-09-05)
 
 
