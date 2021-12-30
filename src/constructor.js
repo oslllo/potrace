@@ -24,24 +24,18 @@ const Potrace = function (image, options) {
 };
 
 Potrace.prototype = {
-    trace: function () {
-        return new Promise(async (resolve, reject) => {
-            try {
-                var info = this.options.all();
-                var load = new Loader(this.dom);
-                this.image = await load.image(this.image);
-                this.canvas = load.canvas(this.image);
-                this.bitmap = load.bitmap(this.canvas, info);
-                this.bitmap.pathlist(this.pathlist);
-                var process = new Processor(info, this.pathlist);
-                process.init();
-                var svg = new Svg(info, this.pathlist, this.bitmap);
-                var traced = svg.get();
-                resolve(traced);
-            } catch (err) {
-                reject(err);
-            }
-        });
+    trace: async function () {
+        var info = this.options.all();
+        var load = new Loader(this.dom);
+        this.image = await load.image(this.image);
+        this.canvas = load.canvas(this.image);
+        this.bitmap = load.bitmap(this.canvas, info);
+        this.bitmap.pathlist(this.pathlist);
+        var process = new Processor(info, this.pathlist);
+        process.init();
+        var svg = new Svg(info, this.pathlist, this.bitmap);
+        var traced = svg.get();
+        return traced;
     },
 };
 
