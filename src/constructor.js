@@ -5,7 +5,6 @@ const Loader = require("./loader");
 const Option = require("./option");
 const { JSDOM } = require("jsdom");
 const is = require("oslllo-validator");
-const EventEmitter = require("events");
 const Processor = require("./processor");
 const constants = require("./constants");
 

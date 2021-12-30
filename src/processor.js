@@ -3,10 +3,8 @@
 const Sum = require("./types/Sum");
 const Quad = require("./types/Quad");
 const Opti = require("./types/Opti");
-const Path = require("./types/Path");
 const Point = require("./types/Point");
 const Curve = require("./types/Curve");
-const Bitmap = require("./types/Bitmap");
 
 const Processor = function (info, pathlist) {
     this.info = info;
