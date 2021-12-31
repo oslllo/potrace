@@ -1,8 +1,8 @@
 const path = require("path");
 const Potrace = require("..");
 const fs = require("fs-extra");
-const { svg2png, initialize } = require('svg2png-wasm');
-const wasm = require.resolve('svg2png-wasm').replace(/(svg2png-wasm).*/, '$1/svg2png_wasm_bg.wasm')
+const { svg2png, initialize } = require('svg2png-wasm-node-10');
+const wasm = require.resolve('svg2png-wasm-node-10').replace(/(svg2png-wasm-node-10).*/, '$1/svg2png_wasm_bg.wasm')
 
 const init = async () => {
     const buffer = await fs.readFile(wasm)
