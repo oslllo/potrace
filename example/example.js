@@ -16,7 +16,7 @@ const draw = async (svg) => {
     initPromise = initPromise || init()
     await initPromise
 
-    return svg2png(svg)
+    return svg2png(svg, { backgroundColor: 'white' })
 }
 
 async function example1() {
