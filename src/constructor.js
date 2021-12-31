@@ -3,13 +3,11 @@
 const Svg = require("./svg");
 const Loader = require("./loader");
 const Option = require("./option");
-const { JSDOM } = require("jsdom");
-const is = require("oslllo-validator");
 const Processor = require("./processor");
 const constants = require("./constants");
 
 const Potrace = function (image, options) {
-    if (!is.instance(this, Potrace)) {
+    if (!(this instanceof Potrace)) {
         return new Potrace(image, options);
     }
     this.image = image;
@@ -17,7 +15,6 @@ const Potrace = function (image, options) {
     this.bitmap = undefined;
     this.pathlist = new Array();
     this.options = new Option(options);
-    this.dom = new JSDOM("<!DOCTYPE html><html></html>", { resources: "usable" });
 
     return this;
 };
@@ -25,10 +22,9 @@ const Potrace = function (image, options) {
 Potrace.prototype = {
     trace: async function () {
         var info = this.options.all();
-        var load = new Loader(this.dom);
+        var load = new Loader();
         this.image = await load.image(this.image);
-        this.canvas = load.canvas(this.image);
-        this.bitmap = load.bitmap(this.canvas, info);
+        this.bitmap = load.bitmap(this.image, info);
         this.bitmap.pathlist(this.pathlist);
         var process = new Processor(info, this.pathlist);
         process.init();
