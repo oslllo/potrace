@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.0](https://www.github.com/oslllo/potrace/compare/v1.2.0...v1.3.0) (2021-12-31)
+
+
+### Features
+
+* **deps:** Simplify dependencies, remove canvas/jsdom ([c013c58](https://www.github.com/oslllo/potrace/commit/c013c58e0fc11c1757fbcf3089e6b42d647fb6af))
+
+
+### Bug Fixes
+
+* **deps:** use svg2png-wasm-node-10 for compatibility ([655fe37](https://www.github.com/oslllo/potrace/commit/655fe37a80bc61b62ea0a21c4346dba353154842))
+* **example:** add white background ([f3b3980](https://www.github.com/oslllo/potrace/commit/f3b3980298ffed0fcc6a9e4186ac7e6a2cb0627b))
+
 ## [1.2.0](https://www.github.com/oslllo/potrace/compare/v1.1.4...v1.2.0) (2021-12-30)
 
 
