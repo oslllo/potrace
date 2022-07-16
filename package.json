@@ -1,6 +1,6 @@
 {
   "name": "oslllo-potrace",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A \"1:1 output\" JavaScript port of Potrace JS for NodeJS.",
   "main": "src/index.js",
   "files": [
