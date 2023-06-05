@@ -39,7 +39,7 @@
   },
   "homepage": "https://github.com/oslllo/potrace#readme",
   "dependencies": {
-    "jimp": "^0.16.1"
+    "jimp": "^0.22.8"
   },
   "devDependencies": {
     "chai": "^4.3.6",
