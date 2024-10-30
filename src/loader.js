@@ -1,8 +1,8 @@
 "use strict";
 
-const jimp = require("jimp");
 const error = require("./error");
 const Bitmap = require("./types/Bitmap");
+const { Jimp } = require('jimp').default || require('jimp');
 
 const Loader = function () {
 };
@@ -18,7 +18,7 @@ Loader.prototype = {
             );
             throw err;
         }
-        return jimp.read(image);
+        return Jimp.read(image);
     },
     bitmap: function (image, info) {
         var {
