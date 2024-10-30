@@ -12,6 +12,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 * severity vulnerability ([7a07a18](https://github.com/oslllo/potrace/commit/7a07a18b54408902fa358227eba00ab7e1346fc8))
 
+### Dependencies
+
+* deps: update jimp to 1.6.0 (#61)
+
 ## [3.0.0](https://github.com/oslllo/potrace/compare/v2.0.1...v3.0.0) (2024-07-21)
 
 
