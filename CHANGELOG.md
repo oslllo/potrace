@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [5.0.0](https://github.com/oslllo/potrace/compare/v4.0.0...v5.0.0) (2025-12-22)
+
+
+### Bug Fixes
+
+* **security:** audit fix ([6cf35fd](https://github.com/oslllo/potrace/commit/6cf35fd9c5a49b583a6f02e666b077ef7470dd28))
+* **security:** audit fix --force ([e33c837](https://github.com/oslllo/potrace/commit/e33c837cbf8554dde126026b53abe31d31172ffd))
+
+
+### Miscellaneous Chores
+
+* release 5.0.0 ([c5fa2ef](https://github.com/oslllo/potrace/commit/c5fa2efe1f6c2fe6d699f0d288333422e6d29a3a))
+
 ## [4.0.0](https://github.com/oslllo/potrace/compare/v3.0.0...v4.0.0) (2024-10-30)
 
 
